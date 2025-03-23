@@ -22,10 +22,11 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             transition: text-shadow 0.3s;}
         .dark-mode h2 {text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);}
-        .fade-in {      opacity: 0;
-                        transform: translateY(10px);
-                        animation: fadeIn 0.5s forwards;}
-                        @keyframes fadeIn {to {opacity: 1; transform: translateY(0);}}
+        .fade-in {opacity: 0;
+                  transform: translateY(10px);
+                  animation: fadeIn 0.5s forwards;}
+                  @keyframes fadeIn {to {opacity: 1;
+                  transform: translateY(0);}}
         .fb-link {  display: block;
                     text-align: center;
                     margin-top: 20px;
@@ -57,8 +58,91 @@
 </style></head><body>
                 <button class="toggle-button" onclick="toggleDarkMode()">🌙</button>
                 <h1 style="text-align: center;">Latest Articles by Nicholas Orlino P. Bayron</h1>
+                <style>
+    .login-button {
+            position: fixed;
+            bottom: 90px; /* Positioned above the theme toggle button */
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #007BFF;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.3s, border-radius 0.3s, padding 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            z-index: 1001; /* Ensure it appears above the theme toggle */
+            padding: 0;
+        }
+        .login-icon {
+            font-size: 22px;
+            transition: margin 0.9s;
+            display: flex;
+            align-items: center;
+        }
+        .passive-key {
+            position: absolute;
+            font-size: 26px;
+            transition: opacity 0.3s;
+        }
+        .login-button:active .passive-key {
+            opacity: 0;
+        }
+        .login-button:active {
+            width: 185px;
+            border-radius: 30px;
+            justify-content: flex-start;
+            padding-left: 15px;
+        }
+        .login-button:active .login-icon {
+            margin-right: 10px;
+        }
+        .login-text {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .login-button:hover .login-text {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .login-main {
+            font-size: 16px;
+            display: block;
+        }
+        .login-sub {
+            font-size: 12px;
+            display: block;
+            opacity: 0.8;
+        }
+        .dark-mode .login-button {background: #f4f4f4; color: #333;}
+    </style>
+</head>
+<body>
+    <button class="theme-toggle">🌞</button>
+    <a href="login.html" class="login-button">
+        <span class="passive-key">🔑</span>
+        <span class="login-icon">🔑</span>
+        <span class="login-text">
+            <span class="login-main">Login or Sign Up</span>
+            <span class="login-sub">for more</span>
+        </span>
+    </a>
+                
                 <h2 style="text-align: center; text-decoration: underline;">( ACTIVITY 3 )</h2>
-        <div class="article fade-in">
+                <div class="article fade-in">
         <h2>Advances in Artificial Intelligence</h2>
         <p><strong>Author:</strong> Tech Insights</p>
         <p><strong>Date:</strong> March 10, 2025</p>
@@ -66,7 +150,7 @@
         <p>Artificial Intelligence (AI) continues to reshape industries, from healthcare to finance. New AI-powered assistants are improving coding efficiency, helping developers write and debug code faster.</p>
         <p>As AI capabilities grow, ethical concerns around automation and job displacement remain topics of debate. The future of AI looks promising, but regulation and responsible development are crucial.</p>
     </div><hr>
-        <div class="article fade-in">
+    <div class="article fade-in">
         <h2>Climate Change and Extreme Weather Events</h2>
         <p><strong>Author:</strong> Environmental Watch</p>
         <p><strong>Date:</strong> March 9, 2025</p>
@@ -74,15 +158,7 @@
         <p>The effects of climate change are becoming more severe, with increasing extreme weather events such as storms and heatwaves. The recent ex-Tropical Cyclone Alfred in Australia left over 330,000 buildings without power.</p>
         <p>Countries are working on sustainability initiatives to mitigate these disasters, including the shift to renewable energy and stricter carbon emission policies.</p>
     </div><hr>
-        <div class="article fade-in">
-        <h2>Economic Uncertainty Amid Trade Policies</h2>
-        <p><strong>Author:</strong> Global Markets Review</p>
-        <p><strong>Date:</strong> March 8, 2025</p>
-        <img src="ASSETS/economic_rise.png" alt="Economic Crisis">
-        <p>Economic instability is on the rise due to ongoing trade tariff discussions. Former President Trump recently warned about a potential recession linked to new tariff policies.</p>
-        <p>Markets are reacting cautiously as global supply chains continue to be affected by trade restrictions. Investors are advised to monitor international economic trends closely.</p>
-    </div><hr>
     <a class="fb-link" href="https://www.facebook.com/nicholasbayron" target="_blank">> Visit My Facebook Profile <</a>
-    <h1> </h1><hr><script>
+    <script>
 function toggleDarkMode() {document.body.classList.toggle('dark-mode'); const button = document.querySelector('.toggle-button'); button.textContent = document.body.classList.contains('dark-mode') ? "🌞" : "🌙";}
 </script></body></html>
